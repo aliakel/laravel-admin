@@ -48,9 +48,9 @@ trait ImageField
 
             foreach ($this->interventionCalls as $call) {
                 call_user_func_array(
-                    [$image, $call['method']],
-                    $call['arguments']
-                )->save($target);
+                    [$image, $call[ 'method' ]],
+                    $call[ 'arguments' ]
+                )->save($target, null, image_type_to_extension(exif_imagetype($target), false));
             }
         }
 
