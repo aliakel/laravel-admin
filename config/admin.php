@@ -1,5 +1,7 @@
 <?php
 
+use Modules\Admin\Encore\Controllers\AuthController;
+
 return [
 
     /*
@@ -11,7 +13,7 @@ return [
     | login page.
     |
     */
-    'name' => 'Laravel-admin',
+    'name' => 'ProDev',
 
     /*
     |--------------------------------------------------------------------------
@@ -22,7 +24,7 @@ return [
     | `img` tag, eg '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo' => '<b>Laravel</b> admin',
+    'logo' => '<b>ProDev</b> admin',
 
     /*
     |--------------------------------------------------------------------------
@@ -34,7 +36,7 @@ return [
     | '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo-mini' => '<b>La</b>',
+    'logo-mini' => '<b>PD</b>',
 
     /*
     |--------------------------------------------------------------------------
@@ -44,7 +46,7 @@ return [
     | This value is the path of laravel-admin bootstrap file.
     |
     */
-    'bootstrap' => app_path('Admin/bootstrap.php'),
+    'bootstrap' => base_path('modules/Admin/app/Encore/bootstrap.php'),
 
     /*
     |--------------------------------------------------------------------------
@@ -60,7 +62,7 @@ return [
 
         'prefix' => env('ADMIN_ROUTE_PREFIX', 'admin'),
 
-        'namespace' => 'App\\Admin\\Controllers',
+        'namespace' => 'Modules\\Admin\\Encore\\Controllers',
 
         'middleware' => ['web', 'admin'],
     ],
@@ -75,7 +77,7 @@ return [
     | be set before running `artisan admin::install` to take effect.
     |
     */
-    'directory' => app_path('Admin'),
+    'directory' => base_path('modules/Admin/app/Encore'),
 
     /*
     |--------------------------------------------------------------------------
@@ -110,7 +112,7 @@ return [
     */
     'auth' => [
 
-        'controller' => App\Admin\Controllers\AuthController::class,
+        'controller' => AuthController::class,
 
         'guard' => 'admin',
 
